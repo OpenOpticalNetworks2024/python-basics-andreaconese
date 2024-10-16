@@ -2,6 +2,7 @@
 
 import numpy as np
 import matplotlib as plt
+from numpy.ma.extras import average
 
 
 # ex1
@@ -63,42 +64,106 @@ def exercise4():
 
 # ex5
 def exercise5():
-    pass
+    # Return the number of times that the string “Emma” appears anywhere in
+# the given string: “Emma is a good developer. Emma is also a writer”
+    string = "Emma is a good developer. Emma is also a writer"
+    print(string.count("Emma"))
 
 
 # ex6
 def exercise6():
-    pass
+    # Given a two list of ints create a third list such that should contain only
+# odd numbers from the first list and even numbers from the second list
+    list1 = [10, 20, 23, 11, 17]
+    list2 = [13, 43, 24, 36, 12]
+    list3 = []
+    for num in list1:
+        if num % 2 != 0:
+            list3.append(num)
+    for num in list2:
+        if num % 2 == 0:
+            list3.append(num)
+    print(list3)
 
 
 # ex7
 def exercise7():
-    pass
+    # Given 2 strings, s1 and s2, create a new string by appending s2 in the
+# middle of s1
+    s1 = "Ciao Andrea"
+    s2 = "sono "
+    middle_index = int(len(s1) / 2)
+    new_string = s1[:middle_index] + s2 + s1[middle_index:]
+    print(new_string)
 
 
 # ex8
 def exercise8():
-    pass
+    # Given 2 strings, s1, and s2 return a new string made of the first, middle
+# and last char each input string
+    s1 = "Ciao Andrea"
+    s2 = "sono"
+    new_string = s1[0] + s2[0] + s1[int(len(s1) / 2)] + s2[int(len(s2) / 2)] + s1[-1] + s2[-1]
+    print(new_string)
 
 
 # ex9
 def exercise9():
-    pass
+    # Given a string input Count all lower case, upper case, digits, and special
+# symbols
+    string = "Ciao Andrea 17 %"
+    upper_case = 0
+    lower_case = 0
+    digits = 0
+    special_symbols = 0
+    for char in string:
+        if char.isupper():
+            upper_case += 1
+        elif char.islower():
+            lower_case += 1
+        elif char.isdigit():
+            digits += 1
+        else:
+            special_symbols += 1
+    print(f"Upper case: {upper_case}, Lower case: {lower_case}, Digits: {digits}, Special symbols: {special_symbols}")
 
 
 # ex10
 def exercise10():
-    pass
+    # Find all occurrences of “USA” in given string ignoring the case
+    string = "Welcome to USA. usa, usa, usa"
+    print(string.count("usa"))
 
 
 # ex11
 def exercise11():
-    pass
+    string = "Andrea ha 22 anni perchè è nato nel 2002"
+    count_digits = 0
+    sum_digits = 0
+
+    for char in string:
+        if char.isdigit():
+            count_digits += 1
+            sum_digits += int(char)
+
+    average = sum_digits / count_digits
+    print(f"Average: {average}")
+    print(f"Sum: {sum_digits}")
+
 
 
 # ex12
 def exercise12():
-    pass
+    # Given an input string, count occurrences of all characters within a string
+    string = "Ciao Andrea"
+    char_count = {}
+    for char in string:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+    print(char_count)
+
 
 
 if __name__ == "__main__":

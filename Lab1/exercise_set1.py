@@ -9,6 +9,7 @@ import matplotlib as plt
 
 # ex1
 def exercise1():
+    print("Hello, World!")
     pass
 
 
